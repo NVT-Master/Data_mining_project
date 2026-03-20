@@ -176,6 +176,7 @@ python scripts/run_pipeline.py
 
 ## 👥 Tác Giả
 
+Nhóm 7
 Data Mining Project - BTL Năm 3 Kì 2
 
 ## 📝 Ghi Chú
@@ -184,11 +185,6 @@ Data Mining Project - BTL Năm 3 Kì 2
 - Theo chuẩn PEP 8 Python
 - Sử dụng modular design cho dễ bảo trì
 - Có thể mở rộng cho các dữ liệu khác
-
-## 📞 Liên Hệ
-
-Nếu có câu hỏi hoặc góp ý, vui lòng liên hệ.
-
 ---
 
 **Last Updated:** 2026-03-14
