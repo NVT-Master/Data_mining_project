@@ -150,10 +150,11 @@ python scripts/run_pipeline.py
 
 | Model | MAE | RMSE | R² | MAPE |
 |-------|-----|------|-----|------|
-| Linear Regression | ... | ... | ... | ... |
-| Ridge Regression | ... | ... | ... | ... |
-| Random Forest | ... | ... | ... | ... |
-| XGBoost | ... | ... | ... | ... |
+| Linear Regression | 21961.5706 | 38065.2514 | 0.7793 | 0.4570 |
+| Ridge Regression | 21871.6286 | 37609.4111 | 0.7845 | 0.4619 |
+| Random Forest | 12902.2806 | 25938.4431 | 0.8975 | 0.2221 |
+| Hist Gradient Boosting | 13092.2194 | 24645.4369 | 0.9075 | 0.2367 |
+| Extra Trees | 7830.0393 | 16386.8372 | 0.9591 | 0.1472 |
 
 ### Top Features
 *Sẽ hiển thị các feature quan trọng nhất*
