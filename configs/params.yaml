@@ -1,0 +1,101 @@
+# Data Mining Project Configuration
+
+# Đường dẫn
+paths:
+  raw_data: "./data/raw"
+  processed_data: "./data/processed"
+  figures: "./outputs/figures"
+  tables: "./outputs/tables"
+  models: "./outputs/models"
+  reports: "./reports"
+
+# Data Loading
+data_loading:
+  files:
+    yield: "yield.csv"
+    pesticides: "pesticides.csv"
+    rainfall: "rainfall.csv"
+    temperature: "temp.csv"
+  target_column: "Yield"
+
+# Preprocessing
+preprocessing:
+  handle_missing:
+    method: "mean"  # "mean", "median", "drop", "forward_fill"
+    fillna_numeric: true
+  
+  handle_outliers:
+    method: "iqr"  # "iqr", "zscore", "isolation_forest"
+    zscore_threshold: 3
+    iqr_multiplier: 1.5
+  
+  scaling:
+    method: "standard"  # "standard", "minmax", "robust"
+  
+  encoding:
+    categorical_columns: ["State", "Season", "Crop"]
+    method: "onehot"  # "label", "onehot"
+
+# Feature Engineering
+feature_engineering:
+  create_new_features: true
+  select_features: true
+  n_features: 15  # số feature chọn dùng SelectKBest
+  importance_method: "random_forest"
+
+# Association Rule Mining
+mining:
+  discretization:
+    rainfall_bins: 5
+    temperature_bins: 5
+    humidity_bins: 5
+  
+  apriori:
+    min_support: 0.3
+    min_confidence: 0.5
+    min_lift: 1.0
+
+# Clustering
+clustering:
+  kmeans:
+    max_k: 10
+    random_state: 42
+  
+  dbscan:
+    eps: 0.5
+    min_samples: 5
+
+# Modeling
+modeling:
+  test_size: 0.2
+  random_state: 42
+  cv_folds: 5
+  
+  models:
+    - name: "Linear Regression"
+      type: "linear_regression"
+    - name: "Ridge Regression"
+      type: "ridge"
+      alpha: 1.0
+    - name: "Random Forest"
+      type: "random_forest"
+      n_estimators: 100
+      max_depth: 15
+    - name: "XGBoost"
+      type: "xgboost"
+      n_estimators: 100
+      max_depth: 6
+      learning_rate: 0.1
+
+# Evaluation
+evaluation:
+  metrics: ["mae", "rmse", "r2", "mape"]
+  save_predictions: true
+  plot_residuals: true
+
+# Visualization
+visualization:
+  dpi: 300
+  style: "seaborn-v0_8"
+  figsize_default: [12, 6]
+  colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
